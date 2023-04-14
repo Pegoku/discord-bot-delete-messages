@@ -5,11 +5,11 @@ Simple discord bots made by Pegoku
 1. Install the dependencies:
 ```bash
 # Debian-based:
-sudo apt install wget python3
+sudo apt install wget python3 python3-pip
 # Red Hat-based:
-sudo dnf install wget python3
+sudo dnf install wget python3 python3-pip
 # Arch-based:
-sudo pacman -S wget python3
+sudo pacman -S wget python3 python3-pip
 ```
 2. Install python dependencies
 ``` python3 -m pip install -U discord.py ```
