@@ -27,6 +27,6 @@ sudo pacman -S wget python3 python3-pip
 4. Edit **\<BotNumber>/bot.py**
 5. Edit **Dockerfile**
 6. Build the docker image
-``` docker build <image_name> . ```
+``` docker build -t <image_name> . ```
 7. Run the image
 ``` docker run <image_name> ```
