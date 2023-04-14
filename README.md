@@ -25,7 +25,8 @@ sudo pacman -S wget python3 python3-pip
 3. Clone the repository
 ``` git clone https://github.com/Pegoku/python-discord-bots.git ```
 4. Edit **\<BotNumber>/bot.py**
-5. Build the docker image
-``` docker build --build-arg BotNumber=<BotNumber> <image_name> . ```
-6. Run the image
+5. Edit **Dockerfile**
+6. Build the docker image
+``` docker build <image_name> . ```
+7. Run the image
 ``` docker run <image_name> ```
