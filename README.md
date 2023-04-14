@@ -1,6 +1,5 @@
-# Discord Bot: Message deleter
-A bot that deletes messages automatically.
-
+# Python Discord Bots
+Simple discord bots made by Pegoku
 # Running
 ### On linux
 1. Install the dependencies:
