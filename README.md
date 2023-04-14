@@ -6,17 +6,17 @@ A bot that deletes messages automatically.
 1. Install the dependencies:
 ```bash
 # Debian-based:
-sudo apt install wget git python3
+sudo apt install wget python3
 # Red Hat-based:
-sudo dnf install wget git python3
+sudo dnf install wget python3
 # Arch-based:
-sudo pacman -S wget git python3
+sudo pacman -S wget python3
 ```
 2. Install python dependencies
 ``` python3 -m pip install -U discord.py ```
 3.  Download the file
-``` wget https://raw.githubusercontent.com/Pegoku/discord-bot-delete-messages/main/bot.py ```
-4. Edit the file
+``` wget https://raw.githubusercontent.com/Pegoku/python-discord-bots/main/<BotNumber>/bot.py ```
+4. Edit **bot.py**
 5. Run the file
 ``` python3 bot.py ```
 
@@ -25,8 +25,8 @@ sudo pacman -S wget git python3
 2. Install [git](https://git-scm.com/downloads)
 3. Clone the repository
 ``` git clone https://github.com/Pegoku/discord-bot-delete-messages.git ```
-4. Edit **bot.py**
+4. Edit **\<BotNumber>/bot.py**
 5. Build the docker image
-``` docker build <image_name> . ```
+``` docker build --build-arg BotNumber=<BotNumber> <image_name> . ```
 6. Run the image
 ``` docker run <image_name> ```
