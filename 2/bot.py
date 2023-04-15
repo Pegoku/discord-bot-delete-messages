@@ -1,5 +1,6 @@
 import discord
 import time
+import asyncio
 
 intents = discord.Intents.default()
 intents.message_content = True
