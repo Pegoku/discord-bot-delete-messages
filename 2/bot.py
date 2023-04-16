@@ -1,26 +1,31 @@
 import discord
-import time
-import asyncio
+from discord.ext import tasks
+import datetime
 
 intents = discord.Intents.default()
-intents.message_content = True
 
 channel_id = <ID> # channel id
 
-client = discord.Client(intents=intents)
+times = []
 
-# delete all the messages of a channel when the minutes are equal to 14, 29, 44 and 59
-@client.event
-async def on_ready():
-    print(f'Logged in as {client.user}')
-    while True:
-        minutes = time.strftime('%M')
-        if minutes == '14' or minutes == '29' or minutes == '44' or minutes == '59':
-            channel = client.get_channel(channel_id)
-            await channel.purge(limit=None)
-            print(f'Deleted messages')
-        else :
-            print(f'Waiting for 30 seconds')
-            await asyncio.sleep(30)
+for i in range(0,24):
+    times.append(datetime.time(i,14)),
+    times.append(datetime.time(i,29)),
+    times.append(datetime.time(i,44)),
+    times.append(datetime.time(i,59))
 
-client.run('<Bot_Token>') # Discord Bot Token
+class MyClient(discord.Client):
+    async def setup_hook(self):
+        deletechat.start()
+    async def on_ready(self):
+        print(f'Logged in as {self.user}')
+
+app = MyClient(intents=intents)
+
+@tasks.loop(time=times)
+async def deletechat():
+        channel = app.get_channel(channel_id)
+        await channel.purge(limit=100)
+        print(f'Chat cleared')
+
+app.run('<Bot_Token>') # Discord Bot Token
